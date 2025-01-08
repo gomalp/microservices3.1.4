@@ -71,7 +71,7 @@ public class UserService {
         String deleteUrl = BASE_URL + "/3"; // Удаление пользователя с id = 3
         ResponseEntity<String> deleteResponse = restTemplate.exchange(deleteUrl, HttpMethod.DELETE, new HttpEntity<>(headers), String.class);
         logger.info(" *** ResponseEntity deleteResponse={}",deleteResponse);
-        String code3 = putResponse.getBody();
+        String code3 = deleteResponse.getBody();
         logger.info(" *** 1 part of code={}",code3);
 
         // Получение итогового кода
